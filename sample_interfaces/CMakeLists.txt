@@ -26,9 +26,11 @@ find_package(CompileSettingsDebug REQUIRED)
 find_package(ProxyStubGenerator REQUIRED)
 find_package(JsonGenerator REQUIRED)
 
-file(GLOB INTERFACE_HEADERS "I*.h")
+file(GLOB SAMPLE_INTERFACE_HEADERS "I*.h")
 
 JsonGenerator(CODE INPUT ${INTERFACE_HEADERS} VERBOSE)
+
+list(APPEND SAMPLE_INTERFACE_HEADERS Module.h definitions.h)
 
 file(GLOB JSON_ENUM_SOURCES "JsonEnum*.cpp")
 file(GLOB JSON_HEADERS "J*.h")
@@ -48,5 +50,9 @@ target_link_libraries(${SHOWCASEINTERFACES_DEFINITIONS}
         ${NAMESPACE}Core::${NAMESPACE}Core
         CompileSettingsDebug::CompileSettingsDebug)
 
-install(FILES ${JSON_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${NAMESPACE}/interfaces/json COMPONENT ${NAMESPACE}_Development)
+install(FILES ${JSON_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${NAMESPACE}/sample_interfaces/json COMPONENT ${NAMESPACE}_Development)
 install(TARGETS ${SHOWCASEINTERFACES_DEFINITIONS} DESTINATION ${CMAKE_INSTALL_LIBDIR}/ COMPONENT ${NAMESPACE}_Runtime)
+install(
+        FILES ${SAMPLE_INTERFACE_HEADERS}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${NAMESPACE}/sample_interfaces COMPONENT ${NAMESPACE}_Development
+)

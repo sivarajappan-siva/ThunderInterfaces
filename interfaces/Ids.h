@@ -208,8 +208,6 @@ namespace Exchange {
         ID_INPUT_PIN_NOTIFICATION                    = ID_INPUT_PIN + 1,
         ID_INPUT_PIN_CATALOG                         = ID_INPUT_PIN + 2,
 
-        ID_MATH                                      = RPC::IDS::ID_EXTERNAL_INTERFACE_OFFSET + 0x290,
-
         ID_VOICEPRODUCER_PROFILE                     = RPC::IDS::ID_EXTERNAL_INTERFACE_OFFSET + 0x2A0,
 
         ID_VOLUMECONTROL                             = RPC::IDS::ID_EXTERNAL_INTERFACE_OFFSET + 0x2B0,

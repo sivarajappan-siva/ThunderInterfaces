@@ -69,6 +69,7 @@ file(GLOB QA_JSON_LINK_HEADERS "${CMAKE_CURRENT_BINARY_DIR}/qa_generated/J*.h")
 
 list(APPEND JSON_LINK_HEADERS "Module.h")
 list(APPEND QA_JSON_LINK_HEADERS "Module.h")
+list(APPEND SAMPLE_JSON_LINK_HEADERS "Module.h")
 
 add_library(${Target} SHARED
         Definitions.cpp
@@ -120,6 +121,11 @@ install(
 install(
         FILES ${QA_JSON_LINK_HEADERS}
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${NAMESPACE}/qa_interfaces/json  COMPONENT ${NAMESPACE}_Test_Development
+)
+
+install(
+        FILES ${SAMPLE_JSON_LINK_HEADERS}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${NAMESPACE}/sample_interfaces/json  COMPONENT ${NAMESPACE}_Test_Development
 )
 
 InstallPackageConfig(
