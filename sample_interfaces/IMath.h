@@ -22,13 +22,13 @@
 #include "Module.h"
 
 namespace Thunder {
-    namespace Exchange {
+    namespace Sample {
 
         // This is an example to show the workings and how to develope a COMRPC/JSONRPC method/interface
         /* @json 1.0.0 */
         struct EXTERNAL IMath : virtual public Core::IUnknown {
 
-           enum { ID = IUnknown::ID_OFFSET_CUSTOM + 0x0120 };
+           enum { ID = ID_MATH };
 
             ~IMath() override = default;
 

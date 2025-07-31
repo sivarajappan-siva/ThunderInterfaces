@@ -23,12 +23,12 @@
 
 namespace Thunder {
 
-namespace Exchange {
+namespace Sample {
 
     // @json 1.0.0
     struct ISimpleAsync : public virtual Core::IUnknown {
 
-        enum { ID = IUnknown::ID_OFFSET_CUSTOM + 0x0100 };
+        enum { ID = ID_SIMPLEASYNC };
 
         enum state : uint8_t {
             DISCONNECTED,
@@ -41,7 +41,7 @@ namespace Exchange {
 
         struct ICallback : public virtual Core::IUnknown {
 
-            enum { ID = ISimpleAsync::ID + 1 };
+            enum { ID = ID_CALLBACK };
 
             // Generator will create its implementation of this interface
             // and supply the object to the called async method. The 
@@ -82,6 +82,6 @@ namespace Exchange {
         virtual Core::hresult Disconnect() = 0;
     };
 
-} // namespace Exchange
+} // namespace Sample
 
 }

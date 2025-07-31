@@ -20,7 +20,7 @@
 #pragma once
 
 #ifndef MODULE_NAME
-#define MODULE_NAME ShowcaseInterfaces
+#define MODULE_NAME sample_interfaces
 #endif
 
 #include <core/core.h>
@@ -29,3 +29,5 @@
 #include <plugins/ISubSystem.h>
 #include <plugins/IShell.h>
 #include <plugins/IStateControl.h>
+
+#include "SampleIds.h"
